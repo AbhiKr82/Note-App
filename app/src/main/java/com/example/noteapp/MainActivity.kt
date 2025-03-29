@@ -24,18 +24,8 @@ class MainActivity : ComponentActivity() {
                 
                 NavHost(
                     navController = navController,
-                    startDestination = "splash"
+                    startDestination = "home"
                 ) {
-                    composable("splash") {
-                        SplashScreen(
-                            onSplashComplete = {
-                                navController.navigate("home") {
-                                    popUpTo("splash") { inclusive = true }
-                                }
-                            }
-                        )
-                    }
-                    
                     composable("home") {
                         HomeScreen(
                             viewModel = viewModel,
